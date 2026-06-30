@@ -151,7 +151,7 @@ Below is a curated list of tool ideas waiting to be built. Each idea is a potent
 | ~~JSON Formatter~~ — ✅ [Built](tools/json-formatter.html) | Easy       |
 | ~~JSON Diff Viewer~~ — ✅ [Built](tools/json-diff-viewer.html) | Medium |
 | ~~JWT Decoder~~ — ✅ [Built](tools/jwt-decoder.html)     | Easy       |
-| URL Encoder / Decoder — encode and decode URL strings    | Easy       |
+| ~~URL Encoder / Decoder~~ — ✅ [Built](tools/url-encoder-decoder.html)    | Easy       |
 | Base64 Encoder / Decoder — encode and decode Base64      | Easy       |
 | ~~Curl Builder~~ — ✅ [Built](tools/curl-builder.html) | Medium |
 | Query String Builder — build and parse URL query strings | Easy       |

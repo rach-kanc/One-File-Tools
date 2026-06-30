@@ -979,6 +979,28 @@
       "status": "live"
     },
     {
+      "id": "url-encoder-decoder",
+      "name": "URL Encoder / Decoder",
+      "shortDescription": "Safely encode and decode URL strings and query parameters.",
+      "longDescription": "## URL Encoder / Decoder\n\nA fast, offline utility to safely encode and decode URL strings. This tool handles percent-encoding for special characters, query parameters, and entire URIs.\n\n### Features\n\n- Dedicated Encode and Decode modes\n- Toggle between strict `encodeURIComponent` (for query parameters) and loose `encodeURI` (for full URLs)\n- Instantly identifies and highlights malformed URL encodings\n- 1-click copy to clipboard functionality\n- Works completely offline directly in the browser",
+      "category": "json-api",
+      "tags": [
+        "decoder",
+        "encoder",
+        "percent-encoding",
+        "uri",
+        "url",
+        "utility"
+      ],
+      "techStack": [
+        "CSS3",
+        "HTML5",
+        "Vanilla JS"
+      ],
+      "difficulty": "Easy",
+      "status": "live"
+    },
+    {
       "id": "uuid-generator",
       "name": "UUID Generator",
       "shortDescription": "Generate random v4 UUIDs instantly, offline.",
