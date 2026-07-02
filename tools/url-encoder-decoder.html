@@ -507,18 +507,44 @@ Built for One File Tools.
         errorMsg.style.display = 'none';
       });
 
+      function copyToClipboard(text, successMsg) {
+        if (!text) return;
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text)
+            .then(() => showToast(successMsg))
+            .catch(err => {
+              console.error('Clipboard API failed', err);
+              fallbackCopy(text, successMsg);
+            });
+        } else {
+          fallbackCopy(text, successMsg);
+        }
+      }
+
+      function fallbackCopy(text, successMsg) {
+        try {
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          textArea.style.top = "0";
+          textArea.style.left = "0";
+          textArea.style.position = "fixed";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          const successful = document.execCommand('copy');
+          document.body.removeChild(textArea);
+          if (successful) showToast(successMsg);
+        } catch (err) {
+          console.error('Fallback copy failed', err);
+        }
+      }
+
       btnCopyText.addEventListener('click', () => {
-        if (!inputText.value) return;
-        navigator.clipboard.writeText(inputText.value).then(() => {
-          showToast('Raw text copied!');
-        });
+        copyToClipboard(inputText.value, 'Raw text copied!');
       });
 
       btnCopyUrl.addEventListener('click', () => {
-        if (!urlText.value) return;
-        navigator.clipboard.writeText(urlText.value).then(() => {
-          showToast('Encoded URL copied!');
-        });
+        copyToClipboard(urlText.value, 'Encoded URL copied!');
       });
 
       function showToast(message) {
