@@ -410,8 +410,10 @@ Built for One File Tools.
     <div class="toast" id="toast">Copied to clipboard!</div>
 
     <script>
-      // Initialize Icons
-      feather.replace();
+      // Initialize Icons safely
+      if (typeof feather !== 'undefined') {
+        feather.replace();
+      }
 
       // DOM Elements
       const inputText = document.getElementById('inputText');
@@ -483,7 +485,7 @@ Built for One File Tools.
       
 
       // Auto update if mode is changed (if either side has data, prioritize the left side (encode), else decode)
-      for (let radio of radioModes) {
+      Array.from(radioModes).forEach(radio => {
         radio.addEventListener('change', () => {
           if (inputText.value) {
             encodeStr();
@@ -491,7 +493,7 @@ Built for One File Tools.
             decodeStr();
           }
         });
-      }
+      });
 
       // Utility Listeners
       btnClearText.addEventListener('click', () => {
