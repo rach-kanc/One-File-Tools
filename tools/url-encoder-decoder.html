@@ -481,10 +481,7 @@ Built for One File Tools.
       btnEncode.addEventListener('click', encodeStr);
       btnDecode.addEventListener('click', decodeStr);
       
-      // Real-time conversion as user types
-      inputText.addEventListener('input', encodeStr);
-      urlText.addEventListener('input', decodeStr);
-      
+
       // Auto update if mode is changed (if either side has data, prioritize the left side (encode), else decode)
       for (let radio of radioModes) {
         radio.addEventListener('change', () => {
